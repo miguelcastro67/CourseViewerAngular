@@ -1,0 +1,33 @@
+<form class="form-horizontal">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Log In</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="loginInputLogin" class="col-sm-3 control-label">Login</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="loginInputLogin" name="loginInputLogin" placeholder="User name" [(ngModel)]="credentials.userName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="loginInputPassword" class="col-sm-3 control-label">Password</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="loginInputPassword" name="loginInputPassword" placeholder="Password" [(ngModel)]="credentials.password">
+                </div>
+            </div>
+            <div class="form-group" *ngIf="showRememberMe == true">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" [(ngModel)]="credentials.rememberMe"> Remember me
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer" style="text-align: right">
+            <button type="button" class="btn btn-primary" (click)="Login()">Login</button>
+        </div>
+    </div>
+</form>

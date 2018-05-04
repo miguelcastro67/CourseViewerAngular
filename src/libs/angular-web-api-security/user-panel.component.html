@@ -1,0 +1,39 @@
+<div *ngIf="authenticationService.GetAccessToken() == ''">
+    <div class="dropdown">
+        <a id="login" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Log In
+            <span class="caret"></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="login" style="width: 500px;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>
+                        <a (click)="loginMode = 'register'; $event.stopPropagation();">Register</a>
+                        &nbsp;|&nbsp;
+                        <a (click)="loginMode = 'login'; $event.stopPropagation();">Log In</a>
+                    </h4>
+                </div>
+                <div class="row" *ngIf="loginMode == 'register'">
+                    <div class="col-md-12">
+                        <register [loginAfterRegister]="loginAfterRegister"
+                                  [postRegister]="postRegister"
+                                  [postLogin]="postLogin"></register>
+                    </div>
+                </div>
+                <div class="row" *ngIf="loginMode == 'login'">
+                    <div class="col-md-12">
+                        <login [postLogin]="postLogin"></login>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="authenticationService.GetAccessToken() != ''">
+    <div>
+        <span>{{ userLabel }}</span>
+        <span *ngIf="showLogout">
+            ( <a (click)="Logout()">Log Out</a> )
+        </span>
+    </div>
+</div>

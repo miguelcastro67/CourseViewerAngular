@@ -1,0 +1,20 @@
+<h4>Course Author</h4>
+<br />
+<div *ngIf="author != null">
+    <a [routerLink]="['/author/', author.AuthorId]">
+        {{ author.FirstName + ' ' + author.LastName }}
+    </a>
+    <br />
+    <div>{{ author.Bio.substr(0, 150) }}...</div>
+    <hr />
+    <h4>Course Info</h4>
+    <br />
+    <div>
+        <span>Duration: </span>
+        <span>{{ courseLength }}</span>
+    </div>
+    <div>
+        <span>Released: </span>
+        <span>{{ courseReleased }}</span>
+    </div>
+</div>

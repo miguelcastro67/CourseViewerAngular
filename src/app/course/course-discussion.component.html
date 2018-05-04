@@ -1,0 +1,18 @@
+<div *ngIf="authenticationService.loggedIn">
+    <h4>COURSE DISCUSSION</h4>
+    <course-discussion-list [courseDiscussion]="courseDiscussion"></course-discussion-list>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary"
+                    *ngIf="commentEntryVisible == false"
+                    (click)="showCommentEntry()">Add Comment</button>
+        </div>
+    </div>
+    <course-discussion-item *ngIf="commentEntryVisible == true"
+                            [commentSubmitted]="commentSubmitted"
+                            [commentCanceled]="commentCanceled"></course-discussion-item>
+</div>
+<div *ngIf="!authenticationService.loggedIn">
+    NOT LOGGED IN
+</div>

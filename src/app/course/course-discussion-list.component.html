@@ -1,0 +1,14 @@
+<div *ngIf="courseDiscussion == null || courseDiscussion.length == 0">
+    NO DISCUSSION COMMENTS FOR THIS COURSE
+</div>
+<div *ngIf="courseDiscussion != null && courseDiscussion.length != 0">
+    <div class="row comment" *ngFor="let discussionItem of courseDiscussion">
+        <div class="col-md-12">
+            <span>{{ discussionItem.User.FirstName + ' ' + discussionItem.User.LastName }}</span>
+            &nbsp;
+            <span>{{ discussionItem.EnteredOn | date : "medium" }}</span>
+            <br />
+            <span class="comment">{{ discussionItem.Comment }}</span>
+        </div>
+    </div>
+</div>

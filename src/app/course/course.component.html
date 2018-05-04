@@ -1,0 +1,15 @@
+<div>
+    <div class="row">
+        <div class="col-md-10">
+            <course-heading [course]="course"></course-heading>
+            <hr />
+            <course-navigator></course-navigator>
+            <br />
+            <router-outlet></router-outlet>
+        </div>
+        <div class="col-md-2">
+            <br /><br />
+            <course-author-info [course]="course" [author]="course?.Author"></course-author-info>
+        </div>
+    </div>
+</div>    

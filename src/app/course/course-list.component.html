@@ -1,0 +1,21 @@
+<h3>COURSE LIST</h3>
+<hr />
+<div *ngIf="courses == null">
+    NO COURSES
+</div>
+<div *ngIf="courses != null">
+    <div class="row">
+        <div class="col-md-7"><h4>COURSE NAME</h4></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3"><h4>AUTHOR NAME</h4></div>
+    </div>
+    <div class="row" *ngFor="let course of courses">
+        <div class="col-md-7">
+            <a [routerLink]="['/course/', course.CourseId]">
+                {{ course.CourseName }}
+            </a>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3">{{ course.Author.FirstName }} {{ course.Author.LastName }}</div>
+    </div>
+</div>

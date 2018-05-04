@@ -1,0 +1,10 @@
+<b>NEW COMMENT</b>
+<div class="row">
+    <div class="col-md-12">
+        <textarea rows="4" [(ngModel)]="commentText" class="comment"></textarea>
+    </div>
+    <div class="col-md-12" style="text-align:right;">
+        <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
+        <button type="button" class="btn btn-warning" (click)="cancel()">Cancel</button>
+    </div>    
+</div>
